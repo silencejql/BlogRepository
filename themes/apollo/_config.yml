@@ -1,0 +1,34 @@
+menu:
+    Blog: /
+    Archive: /archives/
+    Weibo: https://weibo.com/2808102675/profile?topnav=1&wvr=6
+    GitHub: https://github.com/silencejql
+    Rss: /atom.xml
+
+favicon: /favicon.png
+logo: /img/headim.png
+
+comment:
+  livere: MTAyMC80NTA4MC8yMTU5Nw== ## 来必力(data-uid)
+
+# Comment
+# e.g disqus: seansun
+disqus:
+duoshuo:
+
+gitalk:
+  enable: false ## If you want to use Gitment comment system please set the value to true.
+  owner: silencejql ## Your GitHub ID, e.g. username
+  repo: BlogComment ## The repository to store your comments, make sure you're the repo's owner, e.g. gitalk.github.io
+  client_id: bb165d6d9cab9525fd59 ## GitHub client ID, e.g. 75752dafe7907a897619
+  client_secret: 6f0a2afc8b59fec4c3d040dbaea26bafd11d30f8 ## GitHub client secret, e.g. ec2fb9054972c891289640354993b662f4cccc50
+  admin: silencejql ## Github repo owner and collaborators, only these guys can initialize github issues.
+  language: zh-CN ## Language
+  pagerDirection: last # Comment sorting direction, available values are last and first.
+# Analytics
+# google-analytics:
+# ga: UA-xxxxxxxx-x
+
+# Copyright Infomation
+startyear: 2015
+baidu_push: true

@@ -1,0 +1,60 @@
+if theme.duoshuo
+    .ds-thread(data-thread-key=page.path, data-title=page.title, data-url=page.permalink, data-author-key='1')
+    script.
+        var duoshuoQuery = {short_name:"#{theme.duoshuo}"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+
+
+if theme.disqus
+    #disqus_thread
+    script.
+        var disqus_shortname = '#{theme.disqus}';
+        var disqus_identifier = '#{page.path}';
+        var disqus_title = '#{page.title}';
+        var disqus_url = '#{config.url}/#{page.path}';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    script(id='dsq-count-scr' src='//#{theme.disqus}.disqus.com/count.js' async)
+
+if theme.gitalk.enable
+   #container
+    link(rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css?v=" + theme.version)
+    script(type='text/javascript' src='https://unpkg.com/gitalk/dist/gitalk.min.js?v=' +  theme.version)
+    script(type='text/javascript' src='//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js?v=' + theme.version)
+
+    script.
+      var gitalk = new Gitalk({
+        clientID: '#{theme.gitalk.client_id}',
+        clientSecret: '#{theme.gitalk.client_secret}',
+        repo: '#{theme.gitalk.repo}',
+        owner: '#{theme.gitalk.owner}',
+        admin: ['#{theme.gitalk.admin}'],
+        id: md5(window.location.pathname),
+        distractionFreeMode: false,
+        language: '#{theme.gitalk.language}',
+        pagerDirection: '#{theme.gitalk.pagerDirection}'
+      })
+      gitalk.render('container')
+
+if theme.comment.livere
+  #lv-container(data-id="city",data-uid=theme.comment.livere)
+if theme.comment.livere
+  script.
+    (function(d, s) {
+      var j, e = d.getElementsByTagName('body')[0];
+      if (typeof LivereTower === 'function') { return; }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.appendChild(j);
+    })(document, 'script');
